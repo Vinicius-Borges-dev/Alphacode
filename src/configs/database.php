@@ -12,7 +12,6 @@ class Database{
         $this->conn = null;
         try{
             $this->conn = new PDO("mysql:host=".$this->host.";port=". $this->port.";dbname=". $this->database_name, $this->username, $this->password);
-            $this->conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, false);
         }catch(PDOException $err){
             echo ("Erro no servidor: ".$err->getMessage());
         }
