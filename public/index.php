@@ -19,10 +19,39 @@
         <section class="row">
             <section class="col-md-6">
                 <section class="mb-4" id="input-area">
-                    <label for="name alphacode" class="form-label fw-semibold">Nome completo</label>
+                    <label for="name" class="form-label fw-semibold">Nome completo</label>
                     <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="name" name="name" placeholder="Ex.: Letícia Pacheco dos Santos" required>
                 </section>
+
+                <section class="mb-4" id="input-area">
+                    <label for="email" class="form-label fw-semibold">E-mail</label>
+                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="email" name="email" placeholder="Ex.: leticia@gmail.com" required>
+                </section>
+
+                <section class="mb-4" id="input-area">
+                    <label for="telefone" class="form-label fw-semibold">Telefone para contato</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="telefone" name="telefone" placeholder="Ex.: (11) 4033-2019" required>
+                </section>
             </section>
+
+            <section class="col-md-6">
+                <section class="mb-4" id="input-area">
+                    <label for="dataNascimento" class="form-label fw-semibold">Data de nascimento</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="dataNascimento" name="dataNascimento" placeholder="Ex.: 03/10/2003" required>
+                </section>
+
+                <section class="mb-4" id="input-area">
+                    <label for="profissao" class="form-label fw-semibold">Profissao</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="profissao" name="profissao" placeholder="Ex.: Desenvolvedora Web" required>
+                </section>
+
+                <section class="mb-4" id="input-area">
+                    <label for="celular" class="form-label fw-semibold">Celular para contato</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="celular" name="celular" placeholder="Ex.: (11) 98493-2039" required>
+                </section>
+            </section>
+
+            
 
         </section>
     </form>

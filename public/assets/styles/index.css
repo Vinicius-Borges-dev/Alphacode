@@ -3,6 +3,10 @@
     --btn-color: #66b1dd;
 }
 
+.borda{
+    border: 1px solid red;
+}
+
 .bg-alphacode{
     background-color: var(--bg-alphacode);
 }
@@ -14,4 +18,8 @@
 
 .alphacode-input:focus{
     border-bottom: 2px solid var(--bg-alphacode);
+}
+
+.alphacode-input:focus .alphacode-input::after{
+    border: none;
 }
