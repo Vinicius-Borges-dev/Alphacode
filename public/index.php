@@ -56,7 +56,18 @@
         </section>
     </form>
 
+    <?php 
+    
+    require_once 'src/configs/database.php';
 
+    $database = new Database();
+    $data = $database->createConnection();
+    $results = $database->conn->query('SELECT * FROM contatos');
+
+    foreach ($results as $key) {
+        echo $key['nome'];
+    }
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
