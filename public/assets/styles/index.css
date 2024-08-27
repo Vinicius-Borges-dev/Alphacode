@@ -1,0 +1,8 @@
+:root{
+    --bg-alphacode: #078ed1;
+    --btn-color: #66b1dd;
+}
+
+.bg-alphacode{
+    background-color: var(--bg-alphacode);
+}
