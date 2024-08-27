@@ -6,3 +6,12 @@
 .bg-alphacode{
     background-color: var(--bg-alphacode);
 }
+
+.alphacode-input{
+    border: none;
+    border-bottom: 2px solid gray;
+}
+
+.alphacode-input:focus{
+    border-bottom: 2px solid var(--bg-alphacode);
+}
