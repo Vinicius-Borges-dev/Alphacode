@@ -15,12 +15,12 @@
         <h1 class="text-white mx-4">Cadastro de contatos</h1>
     </nav>
 
-    <form onsubmit="" class="container-fluid p-5">
+    <form onsubmit="createContact(event, this)" class="container-fluid p-5">
         <section class="row">
             <section class="col-md-6">
                 <section class="mb-4" id="input-area">
-                    <label for="name" class="form-label fw-semibold fs-5">Nome completo</label>
-                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="name" name="name" placeholder="Ex.: Letícia Pacheco dos Santos" required>
+                    <label for="nome" class="form-label fw-semibold fs-5">Nome completo</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="nome" name="nome" placeholder="Ex.: Letícia Pacheco dos Santos" required>
                 </section>
 
                 <section class="mb-4" id="input-area">
@@ -53,23 +53,24 @@
 
             <section class="col-md-6">
                 <section class="mb-4 form-check">
-                    <input type="checkbox" class="form-check-input fs-4" id="receberWhatsapp">
+                    <input type="checkbox" class="form-check-input fs-4" id="receberWhatsapp" name="receberWhatsapp">
                     <label class="form-check-label fs-4" for="receberWhatsapp">Número de celular possui Whatsapp</label>
                 </section>
 
                 <section class="mb-4 form-check">
-                    <input type="checkbox" class="form-check-input fs-4" id="receberSms">
+                    <input type="checkbox" class="form-check-input fs-4" id="receberSms" name="receberSms">
                     <label class="form-check-label fs-4" for="receberSms">Enviar notificações por SMS</label>
                 </section>
             </section>
 
             <section class="col-md-6">
                 <section class="mb-4 form-check">
-                    <input type="checkbox" class="form-check-input fs-4" id="receberEmail">
+                    <input type="checkbox" class="form-check-input fs-4" id="receberEmail" name="receberEmail">
                     <label class="form-check-label fs-4" for="receberEmail">Enviar notificações por E-mail</label>
                 </section>
             </section>
         </section>
+        
         <span class="w-100 d-flex justify-content-end mt-3">
             <button type="submit" class="btn btn-alphacode px-3 py-2 fs-4 fw-semibold">Cadastrar contato</button>
         </span>

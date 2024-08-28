@@ -5,9 +5,11 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $controller = new ContactController();
 
-if ($uri === '/') {
+if ($uri === '/'){
     require './public/index.php';
 } elseif ($uri === '/create'){
     $controller->createContact();
+} elseif($uri === '/getContacts'){
+    $controller->getContacts();
 }
 ?>

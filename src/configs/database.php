@@ -5,7 +5,7 @@ class Database{
     private $database_name = 'alphacode';
     private $username = 'root';
     private $password = 'root';
-    private $port = 3306;
+    private $port = 3309;
     public $conn;
 
     public function createConnection(){

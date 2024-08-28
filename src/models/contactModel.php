@@ -4,26 +4,22 @@ require __DIR__ . '/../configs/database.php';
 class ContactModel{
     private $table = 'contatos';
     private $conn;
-
     public $nome;
     public $email;
     public $telefone;
     public $dataNascimento;
     public $profissao;
     public $celular;
-    public function __construct($nome, $email, $telefone, $dataNascimento, $profissao, $celular){
+    public $receberWhatsapp;
+    public $receberSms;
+    public $receberEmail;
+    public function __construct(){
         $database =  new Database();
         $this->conn = $database->createConnection();
-        $this->nome = $nome;
-        $this->email = $email;
-        $this->telefone = $telefone;
-        $this->dataNascimento = $dataNascimento;
-        $this->profissao = $profissao;
-        $this->celular = $celular;
     }
 
     public function getContacts(){
-        $sql = 'SELECT nome, dataNascimento, email, celular FROM '.$this->table;
+        $sql = 'SELECT * FROM '.$this->table;
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -48,7 +44,7 @@ class ContactModel{
     }
 
     public function create(){
-        $sql = "INSERT INTO ".$this->table." (nome, email, telefone, dataNascimento, profissao, celular) VALUES (:nome, :email, :telefone, :dataNascimento, :profissao, :celular)";
+        $sql = "INSERT INTO ".$this->table." (nome, email, telefone, dataNascimento, profissao, celular, receberWhatsapp, receberSms, receberEmail) VALUES (:nome, :email, :telefone, :dataNascimento, :profissao, :celular, :receberWhatsapp, :receberSms, :receberEmail)";
 
         $stmt = $this->conn->prepare($sql);
 
@@ -59,6 +55,9 @@ class ContactModel{
             ':dataNascimento'=>$this->dataNascimento,
             ':profissao'=>$this->profissao,
             ':celular'=>$this->celular,
+            ':receberWhatsapp'=>$this->receberWhatsapp,
+            ':receberSms'=>$this->receberSms,
+            ':receberEmail'=>$this->receberEmail
         ]);
     }
 
