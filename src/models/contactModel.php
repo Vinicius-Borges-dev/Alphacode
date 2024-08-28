@@ -39,7 +39,7 @@ class ContactModel{
             ':celular'=>$this->celular,
         ]); 
 
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);    
         return (count($result) === 1);
     }
 

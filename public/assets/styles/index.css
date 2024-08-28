@@ -39,6 +39,7 @@
             padding: 1rem 3rem;
             text-align: center;
             color: white;
+            text-wrap: nowrap;
         }
     }
 }

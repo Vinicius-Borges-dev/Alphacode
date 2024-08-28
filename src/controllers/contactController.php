@@ -20,12 +20,8 @@ class ContactController
 
         return $contact->verifyContactExists();
     }
-    public function createContact()
-    {
+    public function createContact(){
         $data = json_decode(file_get_contents('php://input'), true);
-
-        error_log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".print_r($data, true));
-
         $nome = $data['nome'];
         $email = $data['email'];
         $telefone = $data['telefone'];
@@ -37,9 +33,19 @@ class ContactController
         $receberSms = $data['receberSms'];
         $receberEmail = $data['receberEmail'];
 
+        if ($data['receberWhatsapp'] == 'true' || $data['receberSms'] == true || $data['receberEmail'] == true) {
+            $receberWhatsapp = 1;
+            $receberSms = 1;
+            $receberEmail = 1;
+
+        } else {
+            $receberWhatsapp = 0;
+            $receberSms = 0;
+            $receberEmail = 0;
+        }
 
         if (!$this->verifyContactExists($nome, $email, $telefone, $dataNascimento, $profissao, $celular, $receberWhatsapp, $receberSms, $receberEmail)) {
-            $contact = new ContactModel();
+            
             $contact = new ContactModel();
             $contact->nome = $nome;
             $contact->email = $email;
@@ -52,23 +58,18 @@ class ContactController
             $contact->receberEmail = $receberEmail;
 
             $contact->create();
-            echo json_encode(['status' => 'ok', 'message' => 'Contato adicionado']);
+            header('', true, 201);
+            echo json_encode(['status'=> 'criado com sucesso']);
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'Contato já existe no banco de dados']);
+            header('', true,400);
+            echo json_encode(['status'=> 'contato já existe']);
         }
     }
 
-    public function updateView($view, $data = [])
-    {
+    public function updateView($view, $data = []){
         extract($data);
 
-        ob_start();
         include(__DIR__.$view);
-        $newView = ob_get_clean();
-
-        return([
-            'view' => $newView,
-        ]);
     }
 
     public function getContacts()
@@ -77,8 +78,8 @@ class ContactController
         $contacts = $contact->getContacts();
         
 
-        echo json_encode($this->updateView('/../views/contacts.php', [
+        $this->updateView('/../views/contacts.php', [
             'contatos' => $contacts
-        ]));
+        ]);
     }
 }
