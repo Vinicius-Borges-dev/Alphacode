@@ -8,7 +8,7 @@
 }
 
 .bg-alphacode{
-    background-color: var(--bg-alphacode);
+    background-color: var(--bg-alphacode) !important;
 }
 
 .alphacode-input{
@@ -22,4 +22,9 @@
 
 .alphacode-input:focus .alphacode-input::after{
     border: none;
+}
+
+.btn-alphacode{
+    background-color: var(--btn-color);
+    color:white;
 }

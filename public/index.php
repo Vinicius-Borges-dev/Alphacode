@@ -19,55 +19,77 @@
         <section class="row">
             <section class="col-md-6">
                 <section class="mb-4" id="input-area">
-                    <label for="name" class="form-label fw-semibold">Nome completo</label>
-                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="name" name="name" placeholder="Ex.: Letícia Pacheco dos Santos" required>
+                    <label for="name" class="form-label fw-semibold fs-5">Nome completo</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="name" name="name" placeholder="Ex.: Letícia Pacheco dos Santos" required>
                 </section>
 
                 <section class="mb-4" id="input-area">
-                    <label for="email" class="form-label fw-semibold">E-mail</label>
-                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="email" name="email" placeholder="Ex.: leticia@gmail.com" required>
+                    <label for="email" class="form-label fw-semibold fs-5">E-mail</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="email" name="email" placeholder="Ex.: leticia@gmail.com" required>
                 </section>
 
                 <section class="mb-4" id="input-area">
-                    <label for="telefone" class="form-label fw-semibold">Telefone para contato</label>
-                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="telefone" name="telefone" placeholder="Ex.: (11) 4033-2019" required>
+                    <label for="telefone" class="form-label fw-semibold fs-5">Telefone para contato</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="telefone" name="telefone" placeholder="Ex.: (11) 4033-2019" required>
                 </section>
             </section>
 
             <section class="col-md-6">
                 <section class="mb-4" id="input-area">
-                    <label for="dataNascimento" class="form-label fw-semibold">Data de nascimento</label>
-                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="dataNascimento" name="dataNascimento" placeholder="Ex.: 03/10/2003" required>
+                    <label for="dataNascimento" class="form-label fw-semibold fs-5">Data de nascimento</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="dataNascimento" name="dataNascimento" placeholder="Ex.: 03/10/2003" required>
                 </section>
 
                 <section class="mb-4" id="input-area">
-                    <label for="profissao" class="form-label fw-semibold">Profissao</label>
-                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="profissao" name="profissao" placeholder="Ex.: Desenvolvedora Web" required>
+                    <label for="profissao" class="form-label fw-semibold fs-5">Profissao</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="profissao" name="profissao" placeholder="Ex.: Desenvolvedora Web" required>
                 </section>
 
                 <section class="mb-4" id="input-area">
-                    <label for="celular" class="form-label fw-semibold">Celular para contato</label>
-                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2" id="celular" name="celular" placeholder="Ex.: (11) 98493-2039" required>
+                    <label for="celular" class="form-label fw-semibold fs-5">Celular para contato</label>
+                    <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="celular" name="celular" placeholder="Ex.: (11) 98493-2039" required>
                 </section>
             </section>
 
-            
+            <section class="col-md-6">
+                <section class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input fs-4" id="receberWhatsapp">
+                    <label class="form-check-label fs-4" for="receberWhatsapp">Número de celular possui Whatsapp</label>
+                </section>
 
+                <section class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input fs-4" id="receberSms">
+                    <label class="form-check-label fs-4" for="receberSms">Enviar notificações por SMS</label>
+                </section>
+            </section>
+
+            <section class="col-md-6">
+                <section class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input fs-4" id="receberEmail">
+                    <label class="form-check-label fs-4" for="receberEmail">Enviar notificações por E-mail</label>
+                </section>
+            </section>
         </section>
+        <span class="w-100 d-flex justify-content-end mt-3">
+            <button type="submit" class="btn btn-alphacode px-3 py-2 fs-4 fw-semibold">Cadastrar contato</button>
+        </span>
     </form>
+    <hr>
+    <section class="container-fluid p-5">
+        <table class="table">
+            <thead>
+                <tr class="bg-dark">
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data de nascimento</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Celular para contato</th>
+                    <th scope="col" colspan="2">Ações</th>
 
-    <?php 
-    
-    require_once 'src/configs/database.php';
+                </tr>
+            </thead>
+        </table>
+    </section>
 
-    $database = new Database();
-    $data = $database->createConnection();
-    $results = $database->conn->query('SELECT * FROM contatos');
-
-    foreach ($results as $key) {
-        echo $key['nome'];
-    }
-    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
