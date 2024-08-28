@@ -82,4 +82,46 @@ class ContactController
             'contatos' => $contacts
         ]);
     }
+
+    public function showUpdateForm(){
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        $contact = new ContactModel();
+        $result = $contact->getContactById($data['id']);
+        
+        $this->updateView('/../views/edit.php', [
+            'contato' => $result
+        ]);
+    }
+
+    public function updateContact($id){
+        $data = json_decode(file_get_contents('php://input'), true);
+        $nome = $data['nome'];
+        $email = $data['email'];
+        $telefone = $data['telefone'];
+        $date = explode('/', $data['dataNascimento']);
+        $dataNascimento = $date[2] . "-" . $date[1] . "-" . $date[0];
+        $profissao = $data['profissao'];
+        $celular = $data['celular'];
+        $receberWhatsapp = $data['receberWhatsapp'];
+        $receberSms = $data['receberSms'];
+        $receberEmail = $data['receberEmail'];
+
+        $contact = new ContactModel();
+        $contact->nome = $nome;
+        $contact->email = $email;
+        $contact->telefone = $telefone;
+        $contact->dataNascimento = $dataNascimento;
+        $contact->profissao = $profissao;
+        $contact->celular = $celular;
+        $contact->receberWhatsapp = $receberWhatsapp;
+        $contact->receberSms = $receberSms;
+        $contact->receberEmail = $receberEmail;
+
+        
+        $contacts = $contact->getContacts();
+        $this->updateView('/../views/contacts.php', [
+            'contatos' => $contacts
+        ]);
+    }
 }

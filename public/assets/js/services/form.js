@@ -8,7 +8,7 @@ function getContacts() {
     })
 }
 
-function createContact(e, form) {
+function sendForm(e, form, pathToSubmit) {
     e.preventDefault();
     let formData = {
         nome: form.nome.value,
@@ -22,7 +22,7 @@ function createContact(e, form) {
         receberEmail: form.receberEmail.checked,
     }
     $.ajax({
-        url: '/create',
+        url: `/${pathToSubmit}`,
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
@@ -45,6 +45,24 @@ function createContact(e, form) {
             console.log("Erro ao criar contato", err);
         }
     })
+}
+
+function showUpdateForm(id) {
+    $.ajax({
+        url: '/edit',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            id: id
+        }),
+        success: function(data) {
+            $('#update-contact-form').html(data);
+
+            let modal = new bootstrap.Modal(document.getElementById('updateModal'));
+            modal.show();
+        }
+    })
+    
 }
 
 $(document).ready(function() {
