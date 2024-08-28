@@ -1,14 +1,14 @@
 <?php
-require_once '../models/contactMoodel.php';
+require_once '../models/contactModel.php';
 
-class coontactController{
+class ContactController{
 
 
     public function createContact(){
-        if ($_SERVER['REQUEST_METHOD']){
+        if ($_SERVER['REQUEST_METHOD'] === "POST"){
             
-        };
-    };
+        }
+    }
 
 
 }

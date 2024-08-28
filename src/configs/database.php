@@ -5,7 +5,7 @@ class Database{
     private $database_name = 'alphacode';
     private $username = 'root';
     private $password = 'root';
-    private $port = 3309;
+    private $port = 3306;
     public $conn;
 
     public function createConnection(){
@@ -13,14 +13,13 @@ class Database{
         try{
             $this->conn = new PDO("mysql:host=".$this->host.";port=". $this->port.";dbname=". $this->database_name, $this->username, $this->password);
         }catch(PDOException $err){
-            echo ("Erro no servidor: ".$err->getMessage());
+            echo ("Erro na conexão ao banco de dados: ".$err->getMessage());
         }
+
+        return $this->conn;
     }
 
 }
-
-
-
 
 
 ?>
