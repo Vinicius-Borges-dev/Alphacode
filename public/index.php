@@ -15,7 +15,7 @@
         <h1 class="text-white mx-4">Cadastro de contatos</h1>
     </nav>
 
-    <form class="container-fluid p-5">
+    <form onsubmit="" class="container-fluid p-5">
         <section class="row">
             <section class="col-md-6">
                 <section class="mb-4" id="input-area">
@@ -76,21 +76,28 @@
     </form>
     <hr>
     <section class="container-fluid p-5">
-        <table class="table">
+        <table class="table-contacts">
             <thead>
-                <tr class="bg-dark">
-                    <th scope="col">Nome</th>
-                    <th scope="col">Data de nascimento</th>
-                    <th scope="col">E-mail</th>
-                    <th scope="col">Celular para contato</th>
-                    <th scope="col" colspan="2">Ações</th>
-
+                <tr>
+                    <th scope="col" class="fs-4">Nome</th>
+                    <th scope="col" class="fs-4">Data de nascimento</th>
+                    <th scope="col" class="fs-4">E-mail</th>
+                    <th scope="col" class="fs-4">Celular para contato</th>
+                    <th scope="col" class="fs-4" colspan="2">Ações</th>
                 </tr>
             </thead>
+            <tbody id="contacts-list">
+
+            </tbody>
         </table>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+  <script src="/public/assets/js/services/form.js"></script>
 </body>
 
 </html>

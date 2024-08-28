@@ -28,3 +28,17 @@
     background-color: var(--btn-color);
     color:white;
 }
+
+.table-contacts{
+    width: 100%;
+
+    thead{
+        background-color: var(--bg-alphacode);
+
+        tr th{
+            padding: 1rem 3rem;
+            text-align: center;
+            color: white;
+        }
+    }
+}
