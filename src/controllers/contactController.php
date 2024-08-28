@@ -30,6 +30,17 @@ class ContactController{
         
     }
 
+    public function updateView($view, $data=[]){
+        extract($data);
+        ob_start();
+        include($view);
+        $newView = ob_get_clean();
+        echo json_encode([
+            'view'=> $newView,
+        ]);
+
+    }
+
 
 }
 
