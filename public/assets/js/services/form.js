@@ -8,8 +8,13 @@ function getContacts() {
     })
 }
 
-function sendForm(e, form, pathToSubmit) {
+function sendForm(e, form, Submit=[]) {
     e.preventDefault();
+    console.log(Submit);
+    let id;
+    if (Submit.length > 1){
+        id = Submit[1]
+    }
     let formData = {
         nome: form.nome.value,
         email: form.email.value,
@@ -22,10 +27,11 @@ function sendForm(e, form, pathToSubmit) {
         receberEmail: form.receberEmail.checked,
     }
     $.ajax({
-        url: `/${pathToSubmit}`,
+        url: `/${Submit[0]}`,
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
+            id: id,
             nome: formData.nome,
             email: formData.email,
             telefone: formData.telefone,
@@ -64,6 +70,23 @@ function showUpdateForm(id) {
     })
     
 }
+
+function deleteContact(id) {
+    $.ajax({
+        url: '/delete',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            id: id
+        }),
+        success: function(){
+            getContacts()
+        },
+        error: function(err){
+            console.log('Erro ao deletar: ', err)
+        }
+    })
+}
+
 
 $(document).ready(function() {
     getContacts();

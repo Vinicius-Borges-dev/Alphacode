@@ -11,6 +11,8 @@ if ($uri === '/'){
     $controller->getContacts();
 } elseif($uri === '/edit'){
     $controller->showUpdateForm();
+} elseif($uri === '/update'){
+    $controller->updateContact();
 }
 
 ?>

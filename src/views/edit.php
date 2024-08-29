@@ -1,15 +1,15 @@
 <section class="modal fade" id="updateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
     <section class="modal-dialog modal-xl">
         <section class="modal-content">
-            <section class="modal-header">
-                <h1 class="modal-title fs-5" id="updateModalLabel">Modal title</h1>
+            <section class="modal-header border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </section>
+            <h1 class="modal-title fs-5 text-center" id="updateModalLabel">Editar contato</h1>
             <section class="modal-body">
-                <form onsubmit="sendForm(event, this, 'update')" class="container-fluid p-5">
+                <form onsubmit="sendForm(event, this, ['update', <?=$contato['id']?>])" class="container-fluid p-5">
                     <section class="mb-4" id="input-area">
-                        <label for="name" class="form-label fw-semibold fs-5">Nome completo</label>
-                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="name" name="name" value="<?= $contato['nome'] ?>" required>
+                        <label for="nome" class="form-label fw-semibold fs-5">Nome completo</label>
+                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="nome" name="nome" value="<?= $contato['nome'] ?>" required>
                     </section>
 
                     <section class="mb-4" id="input-area">
@@ -23,7 +23,10 @@
                     </section>
                     <section class="mb-4" id="input-area">
                         <label for="dataNascimento" class="form-label fw-semibold fs-5">Data de nascimento</label>
-                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="dataNascimento" name="dataNascimento" value="<?= $contato['dataNascimento'] ?>" required>
+                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="dataNascimento" name="dataNascimento"value="<?php
+                        $date = explode('-', $contato['dataNascimento']);
+                        echo $date[2] . "/" . $date[1] . "/" . $date[0];
+                        ?>" required>
                     </section>
 
                     <section class="mb-4" id="input-area">

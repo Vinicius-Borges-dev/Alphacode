@@ -1,15 +1,29 @@
-<?php 
+<?php
 
 foreach ($contatos as $contato) {
 ?>
 
     <tr>
-        <td class="fs-4 text-nowrap"><?=$contato['nome']?></td>
-        <td class="fs-4 text-center text-nowrap"><?=$contato['dataNascimento']?></td>
-        <td class="fs-4 text-center text-nowrap"><?=$contato['email']?></td>
-        <td class="fs-4 text-center text-nowrap"><?=$contato['celular']?></td>
-        <td class="text-center"><button class="border border-0 bg-transparent" onclick="showUpdateForm(<?=$contato['id']?>)"> <img src="/public/assets/images/editar.png"></button></td>
-        <td class="text-center"><button class="border border-0 bg-transparent" onclick="deleteContact(<?=$contato['id']?>)"> <img src="/public/assets/images/excluir.png"></button></td>
+        <td class="fs-5 text-nowrap"><?= $contato['nome'] ?></td>
+        <td class="fs-5 text-center text-nowrap">
+            <?php 
+                $date = explode('-', $contato['dataNascimento']);
+                echo $date[2] . "/" . $date[1] . "/" . $date[0];
+            ?>
+        </td>
+        <td class="fs-5 text-center text-nowrap"><?= $contato['email'] ?></td>
+        <td class="fs-5 text-center text-nowrap"><?= $contato['celular'] ?></td>
+        <td class="text-center" colspan='2'>
+            <span class="">
+                <button class="border border-0 bg-transparent" onclick="showUpdateForm(<?= $contato['id'] ?>)">
+                    <img src="/public/assets/images/editar.png">
+                </button>
+                <button class="border border-0 bg-transparent" onclick="deleteContact(<?= $contato['id'] ?>)">
+                    <img src="/public/assets/images/excluir.png">
+                </button>
+            </span>
+
+        </td>
     </tr>
 
 <?php

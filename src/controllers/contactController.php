@@ -94,8 +94,10 @@ class ContactController
         ]);
     }
 
-    public function updateContact($id){
+    public function updateContact(){
         $data = json_decode(file_get_contents('php://input'), true);
+        error_log("AAAAAAAAAAAAAAAAAAAAAA");
+        $id = $data['id'];
         $nome = $data['nome'];
         $email = $data['email'];
         $telefone = $data['telefone'];
@@ -118,10 +120,6 @@ class ContactController
         $contact->receberSms = $receberSms;
         $contact->receberEmail = $receberEmail;
 
-        
-        $contacts = $contact->getContacts();
-        $this->updateView('/../views/contacts.php', [
-            'contatos' => $contacts
-        ]);
+        $contact->update($id);
     }
 }

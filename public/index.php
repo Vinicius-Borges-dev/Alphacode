@@ -70,7 +70,7 @@
                 </section>
             </section>
         </section>
-        
+
         <span class="w-100 d-flex justify-content-end mt-3">
             <button type="submit" class="btn btn-alphacode px-3 py-2 fs-4 fw-semibold">Cadastrar contato</button>
         </span>
@@ -80,11 +80,11 @@
         <table class="table-contacts">
             <thead>
                 <tr>
-                    <th scope="col" class="fs-4">Nome</th>
-                    <th scope="col" class="fs-4">Data de nascimento</th>
-                    <th scope="col" class="fs-4">E-mail</th>
-                    <th scope="col" class="fs-4">Celular para contato</th>
-                    <th scope="col" class="fs-4" colspan="2">Ações</th>
+                    <th scope="col" class="fs-5">Nome</th>
+                    <th scope="col" class="fs-5">Data de nascimento</th>
+                    <th scope="col" class="fs-5">E-mail</th>
+                    <th scope="col" class="fs-5">Celular para contato</th>
+                    <th scope="col" class="fs-5" colspan="2">Ações</th>
                 </tr>
             </thead>
             <tbody id="contacts-list">
@@ -95,12 +95,28 @@
 
     <span id="update-contact-form"></span>
 
+    <footer class="bg-alphacode">
+        <section class="d-flex justify-content-between">
+            <section class="w-100 d-flex justify-content-start align-items-center p-4">
+                <p class="text-white">Termos | Politicas</p>
+            </section>
+            <section class="w-100 d-flex justify-content-center align-items-center p-4">
+                <p class="text-white">&copy; Copyright 2022 | Desenvolvido por</p>
+                <img src="/public/assets/images/logo_rodape_alphacode.png" class="img-fluid w-25" alt="logo alphacode">
+            </section>
+            <section class="w-100 d-flex justify-content-end align-items-center p-4">
+                <p class="text-white">&copy; Alphacode IT Solutions 2022</p>
+            </section>
+        </section>
+
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script
-  src="https://code.jquery.com/jquery-3.7.1.js"
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-  crossorigin="anonymous"></script>
-  <script src="/public/assets/js/services/form.js"></script>
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script src="/public/assets/js/services/form.js"></script>
 </body>
 
 </html>
