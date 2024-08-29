@@ -96,7 +96,6 @@ class ContactController
 
     public function updateContact(){
         $data = json_decode(file_get_contents('php://input'), true);
-        error_log("AAAAAAAAAAAAAAAAAAAAAA");
         $id = $data['id'];
         $nome = $data['nome'];
         $email = $data['email'];
@@ -121,5 +120,13 @@ class ContactController
         $contact->receberEmail = $receberEmail;
 
         $contact->update($id);
+    }
+
+    public function deleteContact(){
+        $data = json_decode(file_get_contents('php://input'), true);
+
+
+        $contact = new ContactModel();
+        $contact->delete($data['id']);
     }
 }

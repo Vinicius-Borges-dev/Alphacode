@@ -84,15 +84,7 @@ class ContactModel
         ]);
     }
 
-    public function delete($id)
-    {
-        $sql = "DELETE FROM " . $this->table . " WHERE id = :id";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute([
-            ':id' => $id
-        ]);
-    }
-
+    
     public function getContactById($id){
         $sql = "SELECT * FROM " . $this->table . " WHERE id = :id";
         $stmt = $this->conn->prepare($sql);
@@ -102,5 +94,13 @@ class ContactModel
 
         $contact = $stmt->fetch(PDO::FETCH_ASSOC);
         return $contact;
+    }
+    public function delete($id)
+    {
+        $sql = "DELETE FROM " . $this->table . " WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            ':id' => $id
+        ]);
     }
 }

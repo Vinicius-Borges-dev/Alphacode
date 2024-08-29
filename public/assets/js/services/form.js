@@ -74,6 +74,7 @@ function showUpdateForm(id) {
 function deleteContact(id) {
     $.ajax({
         url: '/delete',
+        type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
             id: id
@@ -90,7 +91,4 @@ function deleteContact(id) {
 
 $(document).ready(function() {
     getContacts();
-    $('#create-contact-form').submit(function(e) {
-        createContact(e, this);
-    })
 })

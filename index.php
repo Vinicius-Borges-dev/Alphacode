@@ -13,6 +13,8 @@ if ($uri === '/'){
     $controller->showUpdateForm();
 } elseif($uri === '/update'){
     $controller->updateContact();
+} elseif($uri === '/delete'){
+    $controller->deleteContact();
 }
 
 ?>
