@@ -4,15 +4,15 @@ foreach ($contatos as $contato) {
 ?>
 
     <tr>
-        <td class="fs-5 text-nowrap"><?= $contato['nome'] ?></td>
-        <td class="fs-5 text-center text-nowrap">
+        <td class="fs-5 text-center text-nowrap p-4"><?= $contato['nome'] ?></td>
+        <td class="fs-5 text-center text-nowrap p-4">
             <?php 
                 $date = explode('-', $contato['dataNascimento']);
                 echo $date[2] . "/" . $date[1] . "/" . $date[0];
             ?>
         </td>
-        <td class="fs-5 text-center text-nowrap"><?= $contato['email'] ?></td>
-        <td class="fs-5 text-center text-nowrap"><?= $contato['celular'] ?></td>
+        <td class="fs-5 text-center text-nowrap p-4"><?= $contato['email'] ?></td>
+        <td class="fs-5 text-center text-nowrap p-4"><?= $contato['celular'] ?></td>
         <td class="text-center" colspan='2'>
             <span class="">
                 <button class="border border-0 bg-transparent" onclick="showUpdateForm(<?= $contato['id'] ?>)">

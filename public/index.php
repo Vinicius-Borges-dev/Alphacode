@@ -75,8 +75,8 @@
             <button type="submit" class="btn btn-alphacode px-3 py-2 fs-4 fw-semibold">Cadastrar contato</button>
         </span>
     </form>
-    <hr>
-    <section class="container-fluid p-5">
+    <hr class="border border-2">
+    <section class="container-fluid p-5 mb-5">
         <table class="table-contacts">
             <thead>
                 <tr>
@@ -98,14 +98,14 @@
     <footer class="bg-alphacode">
         <section class="d-flex justify-content-between">
             <section class="w-100 d-flex justify-content-start align-items-center p-4">
-                <p class="text-white">Termos | Politicas</p>
+                <p class="text-white fs-4 text-nowrap">Termos | Politicas</p>
             </section>
             <section class="w-100 d-flex justify-content-center align-items-center p-4">
-                <p class="text-white">&copy; Copyright 2022 | Desenvolvido por</p>
+                <p class="text-white fs-4 text-nowrap">&copy; Copyright 2022 | Desenvolvido por</p>
                 <img src="/public/assets/images/logo_rodape_alphacode.png" class="footer-logo" alt="logo alphacode">
             </section>
             <section class="w-100 d-flex justify-content-end align-items-center p-4">
-                <p class="text-white">&copy; Alphacode IT Solutions 2022</p>
+                <p class="text-white fs-4 text-nowrap">&copy; Alphacode IT Solutions 2022</p>
             </section>
         </section>
 

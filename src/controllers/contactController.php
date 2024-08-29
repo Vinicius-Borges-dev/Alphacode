@@ -29,19 +29,16 @@ class ContactController
         $dataNascimento = $date[2] . "-" . $date[1] . "-" . $date[0];
         $profissao = $data['profissao'];
         $celular = $data['celular'];
-        $receberWhatsapp = $data['receberWhatsapp'];
-        $receberSms = $data['receberSms'];
-        $receberEmail = $data['receberEmail'];
+        $receberWhatsapp = 0;
+        $receberSms = 0;
+        $receberEmail = 0;
 
-        if ($data['receberWhatsapp'] == 'true' || $data['receberSms'] == true || $data['receberEmail'] == true) {
+        if ($data['receberWhatsapp']) {
             $receberWhatsapp = 1;
+        } elseif ($data['receberSms']){
             $receberSms = 1;
+        } else if ($data['receberEmail']){
             $receberEmail = 1;
-
-        } else {
-            $receberWhatsapp = 0;
-            $receberSms = 0;
-            $receberEmail = 0;
         }
 
         if (!$this->verifyContactExists($nome, $email, $telefone, $dataNascimento, $profissao, $celular, $receberWhatsapp, $receberSms, $receberEmail)) {
@@ -104,9 +101,17 @@ class ContactController
         $dataNascimento = $date[2] . "-" . $date[1] . "-" . $date[0];
         $profissao = $data['profissao'];
         $celular = $data['celular'];
-        $receberWhatsapp = $data['receberWhatsapp'];
-        $receberSms = $data['receberSms'];
-        $receberEmail = $data['receberEmail'];
+        $receberWhatsapp = 0;
+        $receberSms = 0;
+        $receberEmail = 0;
+
+        if ($data['receberWhatsapp']) {
+            $receberWhatsapp = 1;
+        } elseif ($data['receberSms']){
+            $receberSms = 1;
+        } else if ($data['receberEmail']){
+            $receberEmail = 1;
+        }
 
         $contact = new ContactModel();
         $contact->nome = $nome;
