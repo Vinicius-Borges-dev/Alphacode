@@ -2,18 +2,20 @@ function getContacts() {
     $.ajax({
         url: '/getContacts',
         type: 'GET',
-        success: function(data) {
+        success: function (data) {
             $('#contacts-list').html(data);
         }
     })
 }
 
-function sendForm(e, form, Submit=[]) {
+function sendForm(e, form, Submit = []) {
     e.preventDefault();
-    console.log(Submit);
-    let id;
-    if (Submit.length > 1){
+    let id, path;
+    if (Submit instanceof Array) {
         id = Submit[1]
+        path = Submit[0]
+    } else {
+        path = Submit
     }
     let formData = {
         nome: form.nome.value,
@@ -27,7 +29,7 @@ function sendForm(e, form, Submit=[]) {
         receberEmail: form.receberEmail.checked,
     }
     $.ajax({
-        url: `/${Submit[0]}`,
+        url: `/${path}`,
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
@@ -42,12 +44,12 @@ function sendForm(e, form, Submit=[]) {
             receberSms: formData.receberSms,
             receberEmail: formData.receberEmail,
         }),
-        success: function(data) {
+        success: function (data) {
             form.reset();
             console.log('Criado com sucesso');
             getContacts();
         },
-        error: function(err) {
+        error: function (err) {
             console.log("Erro ao criar contato", err);
         }
     })
@@ -61,14 +63,14 @@ function showUpdateForm(id) {
         data: JSON.stringify({
             id: id
         }),
-        success: function(data) {
+        success: function (data) {
             $('#update-contact-form').html(data);
 
             let modal = new bootstrap.Modal(document.getElementById('updateModal'));
             modal.show();
         }
     })
-    
+
 }
 
 function deleteContact(id) {
@@ -79,16 +81,22 @@ function deleteContact(id) {
         data: JSON.stringify({
             id: id
         }),
-        success: function(){
+        success: function () {
             getContacts()
         },
-        error: function(err){
+        error: function (err) {
             console.log('Erro ao deletar: ', err)
         }
     })
 }
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     getContacts();
+
+    $('input').on('focus', function () {
+        $(`label[for=${$(this).attr('id')}]`).addClass('text-alphacode')
+    }).on('blur', function () {
+        $(`label[for=${$(this).attr('id')}]`).removeClass('text-alphacode')
+    })
 })

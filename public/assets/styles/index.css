@@ -43,3 +43,12 @@
         }
     }
 }
+
+.text-alphacode{
+    color: var(--bg-alphacode);
+}
+
+.footer-logo{
+    max-width: 100px;
+    transform: translateY(-6px);
+}

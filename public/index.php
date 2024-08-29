@@ -18,34 +18,34 @@
     <form onsubmit="sendForm(event, this, 'create')" class="container-fluid p-5">
         <section class="row">
             <section class="col-md-6">
-                <section class="mb-4" id="input-area">
-                    <label for="nome" class="form-label fw-semibold fs-5">Nome completo</label>
+                <section class="mb-4">
+                    <label for="nome"  class="form-label fw-semibold fs-5">Nome completo</label>
                     <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="nome" name="nome" placeholder="Ex.: Letícia Pacheco dos Santos" required>
                 </section>
 
-                <section class="mb-4" id="input-area">
+                <section class="mb-4">
                     <label for="email" class="form-label fw-semibold fs-5">E-mail</label>
                     <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="email" name="email" placeholder="Ex.: leticia@gmail.com" required>
                 </section>
 
-                <section class="mb-4" id="input-area">
+                <section class="mb-4">
                     <label for="telefone" class="form-label fw-semibold fs-5">Telefone para contato</label>
                     <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="telefone" name="telefone" placeholder="Ex.: (11) 4033-2019" required>
                 </section>
             </section>
 
             <section class="col-md-6">
-                <section class="mb-4" id="input-area">
+                <section class="mb-4">
                     <label for="dataNascimento" class="form-label fw-semibold fs-5">Data de nascimento</label>
                     <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="dataNascimento" name="dataNascimento" placeholder="Ex.: 03/10/2003" required>
                 </section>
 
-                <section class="mb-4" id="input-area">
+                <section class="mb-4">
                     <label for="profissao" class="form-label fw-semibold fs-5">Profissao</label>
                     <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="profissao" name="profissao" placeholder="Ex.: Desenvolvedora Web" required>
                 </section>
 
-                <section class="mb-4" id="input-area">
+                <section class="mb-4">
                     <label for="celular" class="form-label fw-semibold fs-5">Celular para contato</label>
                     <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="celular" name="celular" placeholder="Ex.: (11) 98493-2039" required>
                 </section>
@@ -102,7 +102,7 @@
             </section>
             <section class="w-100 d-flex justify-content-center align-items-center p-4">
                 <p class="text-white">&copy; Copyright 2022 | Desenvolvido por</p>
-                <img src="/public/assets/images/logo_rodape_alphacode.png" class="img-fluid w-25" alt="logo alphacode">
+                <img src="/public/assets/images/logo_rodape_alphacode.png" class="footer-logo" alt="logo alphacode">
             </section>
             <section class="w-100 d-flex justify-content-end align-items-center p-4">
                 <p class="text-white">&copy; Alphacode IT Solutions 2022</p>
