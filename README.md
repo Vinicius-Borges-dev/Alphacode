@@ -1,5 +1,18 @@
 ### pasta /base contém o modelo SQL e as bases para o teste
 
+Obs: Tenha certeza de ter o banco de dados configurado na máquina, para isso, abra o caminho:
+```
+src/configs/database.php
+```
+e altere o trecho a seguir de acordo com a porta do seu banco de dados, seu usuario e senha:
+```
+private $host = 'nome_do_host';
+private $database_name = 'alphacode';
+private $username = 'seu_usuario';
+private $password = 'sua_senha';
+private $port = numero_da_porta;
+```
+
 ## Para testes rode o comando PHP para iniciar o projeto na máquina local
 
 ```
