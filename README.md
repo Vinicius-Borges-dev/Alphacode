@@ -1,4 +1,4 @@
-pasta /base contém o modelo SQL e as bases para o teste
+### pasta /base contém o modelo SQL e as bases para o teste
 
 ## Para testes rode o comando PHP para iniciar o projeto na máquina local
 
@@ -6,8 +6,13 @@ pasta /base contém o modelo SQL e as bases para o teste
 php -S localhost:3030
 ```
 
+O comando criará um link para o projeto no endereço:
+```
+http://localhost:3030/
+```
+
 ## Testes de requisições
-para testes de requisições http via postman/insomnia, utilize os seguintes exemplos.
+para testes de requisições http via postman/insomnia, utilize os seguintes exemplos:
 
 ### Create
 ```
