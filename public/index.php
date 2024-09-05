@@ -77,20 +77,22 @@
     </form>
     <hr class="border border-2">
     <section class="container-fluid p-5 mb-5">
-        <table class="table-contacts">
-            <thead>
-                <tr>
-                    <th scope="col" class="fs-5">Nome</th>
-                    <th scope="col" class="fs-5">Data de nascimento</th>
-                    <th scope="col" class="fs-5">E-mail</th>
-                    <th scope="col" class="fs-5">Celular para contato</th>
-                    <th scope="col" class="fs-5" colspan="2">Ações</th>
-                </tr>
-            </thead>
-            <tbody id="contacts-list">
-
-            </tbody>
-        </table>
+        <section class="table-responsive">
+            <table class="table-contacts">
+                <thead>
+                    <tr>
+                        <th scope="col" class="fs-5">Nome</th>
+                        <th scope="col" class="fs-5">Data de nascimento</th>
+                        <th scope="col" class="fs-5">E-mail</th>
+                        <th scope="col" class="fs-5">Celular para contato</th>
+                        <th scope="col" class="fs-5" colspan="2">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="contacts-list">
+    
+                </tbody>
+            </table>
+        </section>
     </section>
 
     <span id="update-contact-form"></span>
