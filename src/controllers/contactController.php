@@ -15,4 +15,17 @@ class ContactController
     {
         self::renderView('index.php');
     }
+
+    public static function getRequest()
+    {
+        $request = json_decode(file_get_contents('php://input'), true);
+
+        $date = explode('/', $request['dataNascimento']);
+        $request['dataNascimento'] = "{$date[2]}-{$date[1]}-{$date[0]}";
+        $request['receberWhatsapp'] = $request['receberWhatsapp'] ? 1 : 0;
+        $request['receberSms'] = $request['receberSms'] ? 1 : 0;
+        $request['receberEmail'] = $request['receberEmail'] ? 1 : 0;
+
+        self::$ContactModel::fillClass($request);
+    }
 }
