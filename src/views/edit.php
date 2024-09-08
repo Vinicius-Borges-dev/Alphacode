@@ -6,51 +6,51 @@
             </section>
             <h1 class="modal-title fs-5 text-center" id="updateModalLabel">Editar contato</h1>
             <section class="modal-body">
-                <form onsubmit="sendForm(event, this, ['update', <?=$contato['id']?>])" class="container-fluid p-5">
+                <form onsubmit="sendFormContact(event, this, ['update', <?=$data['id']?>])" method="POST" class="container-fluid p-5">
                     <section class="mb-4" id="input-area">
                         <label for="nome" class="form-label fw-semibold fs-5">Nome completo</label>
-                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="nome" name="nome" value="<?= $contato['nome'] ?>" required>
+                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="nome" name="nome" value="<?=$data['nome'] ?>" required>
                     </section>
 
                     <section class="mb-4" id="input-area">
                         <label for="email" class="form-label fw-semibold fs-5">E-mail</label>
-                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="email" name="email" value="<?= $contato['email'] ?>" required>
+                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="email" name="email" value="<?= $data['email'] ?>" required>
                     </section>
 
                     <section class="mb-4" id="input-area">
                         <label for="telefone" class="form-label fw-semibold fs-5">Telefone para contato</label>
-                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="telefone" name="telefone" value="<?= $contato['telefone'] ?>" required>
+                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="telefone" name="telefone" value="<?= $data['telefone'] ?>" required>
                     </section>
                     <section class="mb-4" id="input-area">
                         <label for="dataNascimento" class="form-label fw-semibold fs-5">Data de nascimento</label>
                         <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="dataNascimento" name="dataNascimento"value="<?php
-                        $date = explode('-', $contato['dataNascimento']);
+                        $date = explode('-', $data['dataNascimento']);
                         echo $date[2] . "/" . $date[1] . "/" . $date[0];
                         ?>" required>
                     </section>
 
                     <section class="mb-4" id="input-area">
                         <label for="profissao" class="form-label fw-semibold fs-5">Profissao</label>
-                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="profissao" name="profissao" value="<?= $contato['profissao'] ?>" required>
+                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="profissao" name="profissao" value="<?= $data['profissao'] ?>" required>
                     </section>
 
                     <section class="mb-4" id="input-area">
                         <label for="celular" class="form-label fw-semibold fs-5">Celular para contato</label>
-                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="celular" name="celular" value="<?= $contato['celular'] ?>" required>
+                        <input type="text" class="form-control alphacode-input rounded-0 p-0 py-2 fs-4" id="celular" name="celular" value="<?= $data['celular'] ?>" required>
                     </section>
                     <section class="mb-4 form-check">
-                        <input type="checkbox" class="form-check-input fs-4" id="receberWhatsapp" <?php if ($contato['receberWhatsapp']) echo 'checked'; ?>>
+                        <input type="checkbox" class="form-check-input fs-4" id="receberWhatsapp" <?= $data['receberWhatsapp'] ? 'checked': ''; ?>>
                         <label class="form-check-label fs-4" for="receberWhatsapp">Número de celular possui Whatsapp</label>
                     </section>
 
                     <section class="mb-4 form-check">
-                        <input type="checkbox" class="form-check-input fs-4" id="receberSms" <?php if ($contato['receberSms']) echo 'checked'; ?>>
+                        <input type="checkbox" class="form-check-input fs-4" id="receberSms" <?= $data['receberSms'] ? 'checked': ''; ?>>
                         <label class="form-check-label fs-4" for="receberSms">Enviar notificações por SMS</label>
                     </section>
 
                     <section class="col-md-6">
                         <section class="mb-4 form-check">
-                            <input type="checkbox" class="form-check-input fs-4" id="receberEmail" <?php if ($contato['receberEmail']) echo 'checked'; ?>>
+                            <input type="checkbox" class="form-check-input fs-4" id="receberEmail" <?= $data['receberEmail'] ? 'checked': ''; ?>>
                             <label class="form-check-label fs-4" for="receberEmail">Enviar notificações por E-mail</label>
                         </section>
                     </section>
