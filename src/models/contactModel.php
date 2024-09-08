@@ -15,6 +15,14 @@ class ContactModel
     public static $receberSms;
     public static $receberEmail;
 
+    public static function fillClass($dados){
+        foreach ($dados as $key => $value){
+            if(property_exists(self::class, $key)){
+                self::$$key = $value;
+            }
+        }
+    }
+
     public static function createContact(){
         $sql = 'INSERT INTO '.self::$table.' (nome, email, telefone, dataNascimento, profissao, celular, receberWhatsapp, receberSms, receberEmail) VALUES (?,?,?,?,?,?,?,?,?)';
         $response = self::$conn::sqlQuery($sql, [self::$nome, self::$email, self::$telefone, self::$dataNascimento, self::$profissao, self::$celular, self::$receberWhatsapp, self::$receberSms, self::$receberEmail]);
