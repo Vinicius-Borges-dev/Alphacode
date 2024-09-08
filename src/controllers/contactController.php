@@ -28,4 +28,38 @@ class ContactController
 
         self::$ContactModel::fillClass($request);
     }
+
+    public static function create()
+    {
+        self::getRequest();
+
+        self::$ContactModel::createContact();
+    }
+
+    public static function getContacts()
+    {
+        $contatos = self::$ContactModel::getAllContacts();
+        echo self::renderView('contacts.php', $contatos);
+    }
+
+    public static function getContactUpdateForm(){
+        $contactParam = $_GET['contact'];
+
+        $contact = self::$ContactModel::getContactById($contactParam);
+        self::renderView('edit.php', $contact);
+    }
+
+    public static function update(){
+        $contactParam = $_GET['contact'];
+        self::getRequest();
+
+        self::$ContactModel::updateContact($contactParam);
+    }
+
+    public static function delete(){
+        $contactParam = $_GET['contact'];
+        self::getRequest();
+
+        self::$ContactModel::deleteContactById($contactParam);
+    }
 }
