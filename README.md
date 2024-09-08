@@ -1,5 +1,14 @@
 ### pasta /base contém o modelo SQL e as bases para o teste
 
+### Branch Refactory contém uma nova versão refatorada e melhorada para testes
+- Para testar acesse com:
+```
+git checkout refactory
+```
+
+---
+
+
 Obs: Tenha certeza de ter o banco de dados configurado na máquina, para isso, abra o caminho:
 ```
 src/configs/database.php
