@@ -20,6 +20,13 @@ class Database{
         }
     }
 
+    public static function connect(){
+        if(!self::$conn){
+            new self();
+        }
+        return self::$conn;
+    }
+
 }
 
 
