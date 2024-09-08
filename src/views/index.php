@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,7 @@
         <h1 class="text-white mx-4">Cadastro de contatos</h1>
     </nav>
 
-    <form onsubmit="sendForm(event, this, 'create')" class="container-fluid p-5">
+    <form onsubmit="sendFormContact(event, this, 'create')" method="POST" class="container-fluid p-5">
         <section class="row">
             <section class="col-md-6">
                 <section class="mb-4">
@@ -77,7 +76,7 @@
     </form>
     <hr class="border border-2">
     <section class="container-fluid p-5 mb-5">
-        <section class="table-responsive">
+        <section class='table-responsive'>
             <table class="table-contacts">
                 <thead>
                     <tr>
@@ -118,6 +117,7 @@
         src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
+    <script src="/public/assets/js/interactions/form.js"></script>
     <script src="/public/assets/js/services/form.js"></script>
 </body>
 
