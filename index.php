@@ -1,20 +1,22 @@
 <?php 
-require './src/controllers/contactController.php';
 
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$controller = new ContactController();
+require __DIR__.'/src/controllers/contactController.php';
+$uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+
+$contactController = ContactController::class;
+
 if ($uri === '/'){
-    require './public/index.php';
-} elseif ($uri === '/create'){
-    $controller->createContact();
-} elseif($uri === '/getContacts'){
-    $controller->getContacts();
-} elseif($uri === '/edit'){
-    $controller->showUpdateForm();
-} elseif($uri === '/update'){
-    $controller->updateContact();
-} elseif($uri === '/delete'){
-    $controller->deleteContact();
+    $contactController::index();
+} else if ($uri === '/create'){
+    $contactController::create();
+} else if ($uri === '/getAll'){
+    $contactController::getContacts();
+} else if ($uri === '/showUpdateForm'){
+    $contactController::getContactUpdateForm();
+} else if ($uri === '/update'){
+    $contactController::update();
+} else if ($uri === '/delete'){
+    $contactController::delete();
 }
 
 ?>
