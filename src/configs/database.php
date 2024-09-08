@@ -27,6 +27,14 @@ class Database{
         return self::$conn;
     }
 
+    public static function sqlQuery($sql, $params=[])
+    {   
+        self::$conn = self::connect();
+        $stmt = self::$conn->prepare($sql);
+        $stmt->execute($params);
+        return $stmt;
+    }
+
 }
 
 
