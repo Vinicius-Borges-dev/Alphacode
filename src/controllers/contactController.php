@@ -10,4 +10,9 @@ class ContactController
     {   
         include __DIR__ . "/../views/{$view}";
     }
+
+    public static function index()
+    {
+        self::renderView('index.php');
+    }
 }
