@@ -6,11 +6,11 @@ src/configs/database.php
 ```
 e altere o trecho a seguir de acordo com a porta do seu banco de dados, seu usuario e senha:
 ```
-private $host = 'nome_do_host';
-private $database_name = 'alphacode';
-private $username = 'seu_usuario';
-private $password = 'sua_senha';
-private $port = numero_da_porta;
+private static $host = "nome_do_host";
+private static $dbName = "alphacode";
+private static $username = "seu_usuario";
+private static $password = "sua_senha";
+private static $port = numero_da_porta;
 ```
 
 ## Para testes rode o comando PHP para iniciar o projeto na máquina local
@@ -27,7 +27,7 @@ http://localhost:3030/
 ## Testes de requisições
 para testes de requisições http via postman/insomnia, utilize os seguintes exemplos:
 
-### Create
+### Create - Criar novo contato
 ```
 http://localhost:3030/create
 Método: POST
@@ -48,24 +48,30 @@ corpo da requisição
 }
 ```
 
-### Read
+### Read - Visualizar contatos existentes
 ```
-http://localhost:3030/getContacts
+http://localhost:3030/getAll
 Método: GET
 
 ```
 
 
-### Update
+### Mostrar modal com formulário de edição de contato
 ```
-http://localhost:3030/update
+http://localhost:3030/showUpdateForm?contact=[id_do_contato]
+Método: GET
+
+```
+
+### Update - Atualizar contato
+```
+http://localhost:3030/update?contact=[id_do_contato]
 Método: POST
 
 ```
 corpo da requisição
 ```
 {
-	"id": 1,
 	"nome": "segundoTeste",
 	"email": "test2@test.com",
 	"telefone": "(12)91027990",
@@ -78,15 +84,11 @@ corpo da requisição
 }
 ```
 
-### Delete
+### Delete - Apagar contato
 ```
-http://localhost:3030/delete
-Método: POST
+http://localhost:3030/delete?contact=[id_do_contato]
+Método: GET
 
-```
-corpo da requisição
-```
-"id": 1
 ```
 
 
